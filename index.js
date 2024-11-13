@@ -6,10 +6,10 @@ const bot=new Telegrambot(process.env.TELEGRAM_BOT_TOKEN,{polling:true})
 
 bot.onText(/\/joke/,async(option)=>{
     const response=await axois.get('http://www.official-joke-api.appspot.com/random_joke');
-    console.log(response.data);
+    //console.log(response.data);
     const setup=response.data.setup;
     const punchline=response.data.punchline;
     //send the joke to the user
-    bot.sendMessage(option.chat.id, setup+","+punchline);
+    bot.sendMessage(option.chat.id, setup+", "+punchline);
     });
     
